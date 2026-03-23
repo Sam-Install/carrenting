@@ -17,7 +17,9 @@ export default function Home() {
       </div>
 
       <AnimateSection>
-        <Abs/>
+        <div id='/about'>
+          <Abs/>
+        </div>
       </AnimateSection>
 
       <AnimateSection delay={0.1}>
@@ -29,7 +31,9 @@ export default function Home() {
       </AnimateSection>
 
       <AnimateSection delay={0.1}>
-        <Location />
+        <div >
+          <Location/>
+        </div>
       </AnimateSection>
 
       <AnimateSection delay={0.1}>

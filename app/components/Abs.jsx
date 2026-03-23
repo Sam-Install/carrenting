@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Abs = () => {
   return (
-    <section className='pt-16 px-4 sm:px-8 md:px-16 lg:px-24'>
+    <section  className='pt-16 px-4 sm:px-8 md:px-16 lg:px-24' >
 
       <div className='flex flex-col sm:flex-row items-center gap-10'>
 

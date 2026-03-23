@@ -34,7 +34,7 @@ const contactDetails = [
 
 const Location = () => {
   return (
-    <section className='pt-16 pb-20 px-4 sm:px-8 md:px-16 lg:px-24'>
+    <section className='pt-16 pb-20 px-4 sm:px-8 md:px-16 lg:px-24' id='#location'>
 
       {/* Header */}
       <div className='text-center mb-12'>

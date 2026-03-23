@@ -45,8 +45,8 @@ const Footer = () => {
               { label: 'Home', href: '/' },
               { label: 'Our Cars', href: '/cars' },
               { label: 'Book Now', href: '/booking' },
-              { label: 'About Us', href: '/about' },
-              { label: 'Contact', href: '/contact' },
+              { label: 'About Us', href: '#about' },
+              { label: 'Contact', href: '#location' },
             ].map((link) => (
               <li key={link.label}>
                 <Link
@@ -98,7 +98,7 @@ const Footer = () => {
 
       </div>
 
-      {/* Bottom Bar */}
+    
       <div className='flex flex-col sm:flex-row items-center justify-between gap-3 pt-8 text-xs text-gray-600'>
         <p>© {new Date().getFullYear()} Jibs Car Rental. All rights reserved.</p>
         <p>Designed with simplicity in Diani, Kenya</p>

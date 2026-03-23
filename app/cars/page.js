@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import { FaCar, FaUsers, FaGasPump, FaCog, FaStar, FaSearch, FaChevronLeft, FaChevronRight, FaSlidersH, FaCalculator, FaTimes } from 'react-icons/fa'
+import Footer from '../components/Footer'
 
 const allCars = [
   {
@@ -176,7 +177,7 @@ const MIN_PRICE = 3000
 const MAX_PRICE = 20000
 const STEP = 1000
 
-// ── Card Slider ──────────────────────────────────────────────
+
 const CardSlider = ({ images, name }) => {
   const [current, setCurrent] = useState(0)
   const prev = (e) => { e.stopPropagation(); setCurrent((p) => (p - 1 + images.length) % images.length) }
@@ -196,7 +197,7 @@ const CardSlider = ({ images, name }) => {
   )
 }
 
-// ── Modal Gallery ────────────────────────────────────────────
+
 const ModalGallery = ({ images, name }) => {
   const [active, setActive] = useState(0)
   const prev = () => setActive((p) => (p - 1 + images.length) % images.length)
@@ -220,7 +221,6 @@ const ModalGallery = ({ images, name }) => {
   )
 }
 
-// ── Dual Range Slider ────────────────────────────────────────
 const RangeSlider = ({ min, max, step, valueMin, valueMax, onChangeMin, onChangeMax }) => {
   const pct = (v) => ((v - min) / (max - min)) * 100
   return (
@@ -289,7 +289,7 @@ const Calculator = ({ onClose, preselectedCar }) => {
             </div>
           )}
 
-          {/* Car preview */}
+    
           {car && (
             <div className='flex items-center gap-3 bg-gray-50 rounded-xl p-3'>
               <div className='relative w-16 h-12 rounded-lg overflow-hidden flex-shrink-0'>
@@ -303,7 +303,7 @@ const Calculator = ({ onClose, preselectedCar }) => {
             </div>
           )}
 
-          {/* Days */}
+    
           <div>
             <label className='text-xs font-semibold text-gray-600 mb-1.5 block'>Number of Days</label>
             <div className='flex items-center gap-3'>
@@ -318,7 +318,7 @@ const Calculator = ({ onClose, preselectedCar }) => {
             <p className='text-[10px] text-gray-400 mt-1'>Max 90 days per booking</p>
           </div>
 
-          {/* Breakdown */}
+        
           {car && (
             <div className='bg-gray-50 rounded-xl p-4 flex flex-col gap-2'>
               <div className='flex justify-between text-xs text-gray-500'>
@@ -350,7 +350,7 @@ const Calculator = ({ onClose, preselectedCar }) => {
   )
 }
 
-// ── Main Page ────────────────────────────────────────────────
+
 const page = () => {
   const [selected, setSelected] = useState('All')
   const [search, setSearch] = useState('')
@@ -380,7 +380,7 @@ const page = () => {
   return (
     <div className='min-h-screen bg-gray-50'>
 
-      {/* Navbar + Hero Banner */}
+      
       <div className='relative'>
         <Navbar />
         <div className='bg-gray-900 pt-28 pb-12 px-4 sm:px-8 md:px-16 lg:px-24 text-center'>
@@ -394,11 +394,11 @@ const page = () => {
 
       <div className='px-4 sm:px-8 md:px-16 lg:px-24 py-10'>
 
-        {/* Filter Row */}
+    
         <div className='flex flex-col gap-3 mb-6'>
           <div className='flex flex-wrap items-center gap-3'>
 
-            {/* Search */}
+    
             <div className='relative w-full sm:w-60'>
               <FaSearch className='absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-300 text-xs' />
               <input type='text' placeholder='Search cars...' value={search}
@@ -406,7 +406,7 @@ const page = () => {
                 className='w-full pl-9 pr-4 py-2 rounded-full border border-gray-200 bg-white text-xs text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500' />
             </div>
 
-            {/* Price toggle */}
+    
             <button onClick={() => setShowPriceFilter(!showPriceFilter)}
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium border transition-colors ${
                 isPriceFiltered ? 'bg-blue-600 text-white border-blue-600' : 'bg-white border-gray-200 text-gray-500 hover:border-blue-400 hover:text-blue-600'
@@ -420,7 +420,7 @@ const page = () => {
               )}
             </button>
 
-            {/* Calculator — no car preselected */}
+        
             <button onClick={() => openCalculator(null)}
               className='flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium border bg-white border-gray-200 text-gray-500 hover:border-blue-400 hover:text-blue-600 transition-colors'>
               <FaCalculator size={10} />
@@ -470,7 +470,7 @@ const page = () => {
             </div>
           )}
 
-          {/* Category pills */}
+          
           <div className='flex gap-2 flex-wrap'>
             {categories.map((cat) => (
               <button key={cat} onClick={() => handleCategorySelect(cat)}
@@ -485,7 +485,6 @@ const page = () => {
           </div>
         </div>
 
-        {/* Results count */}
         <p className='text-xs text-gray-400 mb-5'>
           Showing <span className='font-semibold text-gray-600'>{filtered.length}</span> vehicle{filtered.length !== 1 ? 's' : ''}
           {selected !== 'All' && search === '' && <span> in <span className='text-blue-600 font-semibold'>{selected}</span></span>}
@@ -493,7 +492,7 @@ const page = () => {
           {isPriceFiltered && <span> · <span className='text-blue-600 font-semibold'>KSh {priceMin.toLocaleString()} – {priceMax.toLocaleString()}/day</span></span>}
         </p>
 
-        {/* Cars Grid */}
+
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
           {filtered.length > 0 ? filtered.map((car) => (
             <div key={car.id} className='bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 group'>
@@ -523,7 +522,7 @@ const page = () => {
                   </div>
                 </div>
                 <div className='flex items-center justify-between gap-1.5'>
-                  {/* Calculate — passes THIS specific car */}
+                  
                   <button onClick={() => openCalculator(car)}
                     className='flex items-center gap-1 text-[10px] text-gray-400 hover:text-blue-600 transition-colors'>
                     <FaCalculator size={9} /> Calculate
@@ -551,7 +550,7 @@ const page = () => {
         </div>
       </div>
 
-      {/* Detail Modal */}
+      
       {modalCar && (
         <div className='fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center px-4' onClick={() => setModalCar(null)}>
           <div className='bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl' onClick={(e) => e.stopPropagation()}>
@@ -610,7 +609,7 @@ const page = () => {
         </div>
       )}
 
-      {/* Calculator Modal */}
+      
       {showCalculator && (
         <Calculator
           onClose={closeCalculator}
@@ -618,7 +617,12 @@ const page = () => {
         />
       )}
 
+
+      <Footer/>
+
     </div>
+
+    
   )
 }
 

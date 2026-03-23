@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Link from 'next/link'
 import { FaCar, FaUser, FaPhone, FaEnvelope, FaCalendarAlt, FaMobile, FaCreditCard, FaMoneyBillWave, FaChevronRight, FaChevronLeft, FaIdCard, FaClock, FaCheckCircle } from 'react-icons/fa'
+import Footer from '../components/Footer'
 
 const cars = [
   { id: 1, name: 'Toyota Camry',      category: 'Sedan',   pricePerDay: 5000,  pricePerHour: 2500  },
@@ -585,9 +586,16 @@ const page = () => {
             )}
           </div>
 
+
+
         </div>
       </div>
+
+      <Footer/>
+      
     </div>
+
+    
   )
 }
 
