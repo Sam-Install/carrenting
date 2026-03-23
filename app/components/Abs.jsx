@@ -8,7 +8,7 @@ const Abs = () => {
 
       <div className='flex flex-col sm:flex-row items-center gap-10'>
 
-        {/* Image Side */}
+        
         <div className='w-full sm:w-1/2 relative h-[300px] sm:h-[450px] rounded-2xl overflow-hidden'>
           <Image
             src='/abs.jpeg'
@@ -18,7 +18,7 @@ const Abs = () => {
           />
         </div>
 
-        {/* Text Side */}
+    
         <div className='w-full sm:w-1/2 flex flex-col items-center text-center gap-4'>
 
           <h3 className='text-blue-600 text-sm uppercase tracking-[0.25em] font-semibold'>

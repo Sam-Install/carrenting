@@ -55,58 +55,53 @@ const cars = [
 
 const Most = () => {
   return (
-    <section className='pt-16 pb-20 px-4 sm:px-8 md:px-16 lg:px-24'>
+    <section className='pt-12 pb-16 px-4 sm:px-6 md:px-12 lg:px-20'>
 
-      {/* Section Header */}
-      <div className='text-center mb-12'>
-        <h3 className='text-blue-600 text-sm uppercase tracking-[0.25em] font-semibold mb-2'>
+      <div className='text-center mb-8'>
+        <h3 className='text-blue-600 text-xs uppercase tracking-[0.25em] font-semibold mb-1.5'>
           Top Picks
         </h3>
-        <h1 className='text-3xl sm:text-4xl font-bold text-gray-900'>
+        <h1 className='text-2xl sm:text-3xl font-bold text-gray-900'>
           Most Rented Cars
         </h1>
-        <p className='text-gray-400 mt-3 text-sm sm:text-base max-w-md mx-auto'>
+        <p className='text-gray-400 mt-2 text-xs sm:text-sm max-w-md mx-auto'>
           Our most popular vehicles chosen by hundreds of happy customers every month.
         </p>
       </div>
 
-      {/* Cars Grid */}
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
+      <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4'>
         {cars.map((car) => (
           <div
             key={car.id}
-            className='bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 group'
+            className='bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 group'
           >
-            {/* Car Image */}
-            <div className='relative h-52 overflow-hidden'>
+            <div className='relative h-36 overflow-hidden'>
               <Image
                 src={car.image}
                 alt={car.name}
                 fill
                 className='object-cover group-hover:scale-105 transition-transform duration-500'
               />
-              {/* Category Badge */}
-              <span className='absolute top-3 left-3 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full'>
+              <span className='absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-semibold px-2 py-0.5 rounded-full'>
                 {car.category}
               </span>
             </div>
 
-            {/* Car Details */}
-            <div className='p-5'>
-              <h2 className='text-lg font-bold text-gray-900'>{car.name}</h2>
-              <p className='text-sm text-gray-400 mt-1 leading-relaxed'>
+            <div className='p-3'>
+              <h2 className='text-sm font-bold text-gray-900 leading-tight'>{car.name}</h2>
+              <p className='text-[11px] text-gray-400 mt-1 leading-relaxed line-clamp-2'>
                 {car.description}
               </p>
 
-              {/* Price + Button */}
-              <div className='flex items-center justify-between mt-5'>
+              <div className='flex items-center justify-between mt-3'>
                 <div>
-                  <span className='text-2xl font-bold text-blue-600'>ksh{car.price}</span>
-                  <span className='text-xs text-gray-400 ml-1'>/ hour</span>
+                  <span className='text-base font-bold text-blue-600'>ksh{car.price}</span>
+                  <span className='text-[10px] text-gray-400 ml-0.5'>/day
+                  </span>
                 </div>
                 <Link
                   href='/booking'
-                  className='bg-blue-600 text-white text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-blue-700 transition-colors duration-200'
+                  className='bg-blue-600 text-white text-[10px] font-semibold px-3 py-1.5 rounded-full hover:bg-blue-700 transition-colors duration-200'
                 >
                   Book Now
                 </Link>

@@ -6,10 +6,10 @@ const Footer = () => {
   return (
     <footer className='bg-gray-900 text-gray-400 pt-16 pb-8 px-4 sm:px-8 md:px-16 lg:px-24'>
 
-      {/* Top Grid */}
+      
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-800'>
 
-        {/* Brand */}
+      
         <div className='flex flex-col gap-4'>
           <Link href='/' className='flex items-center gap-2'>
             <FaCar className='text-blue-500 text-2xl' />
@@ -20,7 +20,7 @@ const Footer = () => {
           <p className='text-sm leading-relaxed'>
             Premium car rental service based in South Coast Diani, Kenya. Your comfort and convenience is our priority.
           </p>
-          {/* Socials */}
+          
           <div className='flex gap-3 mt-2'>
             <a href='#' className='bg-gray-800 hover:bg-blue-600 text-white p-2.5 rounded-full transition-colors duration-200'>
               <FaFacebookF size={14} />
@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Quick Links */}
+        
         <div className='flex flex-col gap-4'>
           <h3 className='text-white font-semibold text-base'>Quick Links</h3>
           <ul className='flex flex-col gap-2'>
@@ -47,6 +47,7 @@ const Footer = () => {
               { label: 'Book Now', href: '/booking' },
               { label: 'About Us', href: '#about' },
               { label: 'Contact', href: '#location' },
+              {label: 'Admin', href: 'login'},
             ].map((link) => (
               <li key={link.label}>
                 <Link
